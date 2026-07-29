@@ -1,0 +1,24 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CharacteristicPMethodsFrobeniusEndomorphismFoundationCanonicalLaneLean.FrobeniusEndomorphismFoundation
+
+namespace HautevilleHouse
+namespace CharacteristicPMethodsFrobeniusEndomorphismFoundationCanonicalLaneLean
+
+structure FrobeniusEndomorphismInPositiveCharacteristicPackage {F : FrobeniusEndomorphismFoundation} where
+  field : Type u
+  characteristic : Nat
+  frobeniusEndomorphismField : field → field
+  fieldFrobeniusIsEndomorphism : Prop
+  fieldFrobeniusIsEndomorphismTerm : fieldFrobeniusIsEndomorphism
+
+structure FrobeniusEndomorphismInPositiveCharacteristicEvidence {F : FrobeniusEndomorphismFoundation} (P : FrobeniusEndomorphismInPositiveCharacteristicPackage F) where
+  fieldFrobeniusIsEndomorphismClosed : P.fieldFrobeniusIsEndomorphism
+
+def FrobeniusEndomorphismInPositiveCharacteristicClosed {F : FrobeniusEndomorphismFoundation} (P : FrobeniusEndomorphismInPositiveCharacteristicPackage F) : Prop :=
+  P.fieldFrobeniusIsEndomorphism
+
+theorem frobenius_endomorphism_in_positive_characteristic_closed_from_evidence {F : FrobeniusEndomorphismFoundation} (P : FrobeniusEndomorphismInPositiveCharacteristicPackage F) (E : FrobeniusEndomorphismInPositiveCharacteristicEvidence P) : FrobeniusEndomorphismInPositiveCharacteristicClosed P :=
+  E.fieldFrobeniusIsEndomorphismClosed
+
+end CharacteristicPMethodsFrobeniusEndomorphismFoundationCanonicalLaneLean
+end HautevilleHouse
